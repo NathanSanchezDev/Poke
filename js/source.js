@@ -1,7 +1,9 @@
 // Define suggestions array before using it in functions
 const suggestions = [
-    'bulbasaur', 'charmander', 'squirtle', 'pikachu', 'jigglypuff'
-    // Add more suggestions as needed
+    'bulbasaur', 'ivysaur', 'venusaur', 'charmander', 'charmeleon',
+    'charizard', 'squirtle', 'wartortle', 'blastoise', 'caterpie',
+    'metapod', 'butterfree', 'pidgey', 'pidgeotto', 'pidgeot',
+    'rattata', 'raticate', 'spearow', 'fearow', 'ekans'    // Add more suggestions as needed
 ];
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -57,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function displayPoke() {
         const name = pokeInfo.name;
         const imageUrl = pokeInfo.sprites.front_default;
-        const moves = pokeInfo.moves.slice(0, 5); // Get the first 5 moves
+        const types = pokeInfo.types.map(type => type.type.name).join(', ');
     
         document.querySelector('h1').innerText = name;
         document.querySelector('img').src = imageUrl;
@@ -65,11 +67,15 @@ document.addEventListener('DOMContentLoaded', function() {
         const movesList = document.getElementById('moves-list');
         movesList.innerHTML = ''; // Clear any existing moves
     
-        for (const move of moves) {
+        for (const move of pokeInfo.moves.slice(0, 5)) {
             const moveItem = document.createElement('li');
             moveItem.textContent = move.move.name;
             movesList.appendChild(moveItem);
         }
-    }})
+    
+        document.querySelector('#pokemon-types').textContent = "Types: " + types; // Display types
+    }
+    
+    })
 
   
