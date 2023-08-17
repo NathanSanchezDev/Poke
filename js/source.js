@@ -3,7 +3,7 @@ const suggestions = [
     'bulbasaur', 'ivysaur', 'venusaur', 'charmander', 'charmeleon',
     'charizard', 'squirtle', 'wartortle', 'blastoise', 'caterpie',
     'metapod', 'butterfree', 'pidgey', 'pidgeotto', 'pidgeot',
-    'rattata', 'raticate', 'spearow', 'fearow', 'ekans'    // Add more suggestions as needed
+    'rattata', 'raticate', 'spearow', 'fearow', 'ekans', 'lucario'    // Add more suggestions as needed
 ];
 
 document.addEventListener('DOMContentLoaded', function() {
